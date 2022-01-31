@@ -60,11 +60,15 @@
 							this.setValue( value );
 						},
 						commit: function( element ) {
-							var value = this.getValue();
-							if ( value )
+							var value = this.getValue();							
+							if ( value ) {
 								element.setStyle( 'list-style-type', value );
-							else
+								element.setAttribute('data-list-style-type', value);
+							}
+							else {
 								element.removeStyle( 'list-style-type' );
+								element.removeAttribute('data-list-style-type', value);
+							}
 						}
 					} ]
 				} ],
